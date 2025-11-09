@@ -1,0 +1,13 @@
+El software desarrollado es un workspace de ROS2.
+
+
+Mi workspace contiene tres paquetes. Map_generator: paquete encargado de usar el sistema de MoCap para generar un mapa dinamico compatible con NAV2. 
+Micro-ROS-agent: es el agente micro-ros que genera el vinculo entre la computadora con ROS2 y micro-ROS, este nodo no lo desarrolle, se descargo del github de micro-ROS. 
+El último paquete es pololu_controller: este paquete tiene tres nodos distintos y un archivo .launch. 
+Un nodo genera control punto a punto para un solo agente, con el archivo launch se puede correr varias instancias del nodo al mismo tiempo, funciona con 5 agentes, 
+a veces con 6, pero no se recomienda, el nodo se llama cp2p_pololu (controll point to point pololu). El otro nodo es multi_agent_controller, 
+bastante similar al cp2p_pololu pero este maneja en simultaneo varios agentes, se probo con 9 agentes, pero es configurable para usar más, 
+aunque se deben hacer pruebas para ver el alcance. Este nodo grafica y guarda las trayectorias de los agentes. El último nodo es un demo para presentar la arquitectura modular
+y el uso de multples agentes, este nodo se llama demo_chain_follower. Hace una fila ordenada de agentes, donde se siguen entre si y el primero en la fila sigue un marcador.   
+
+ 
